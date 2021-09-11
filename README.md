@@ -27,19 +27,23 @@ bin/kafka-server-start.sh config/server.properties
 hdfs namenode -format
 start-dfs.sh
 ```
+5. Upload/copy the train.csv to hdfs filesystem with below command.
+```bash
+hdfs dfs -copyFromLocal train.csv /files/
+```
 
-5. Create kafka topic to publish the test data with below command.
+6. Create kafka topic to publish the test data with below command.
 
 ```bash
 bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic housesalepredictor
 ```
-6. Run stream_test_data_kafka.py in bash terminal to publish the data to kafka topic housesalepredictor(create the topic prior to running the script).
+7. Run stream_test_data_kafka.py in bash terminal to publish the data to kafka topic housesalepredictor(create the topic prior to running the script).
 
 ```bash
 python3 stream_test_data_kafka.py
 ```
 
-7. Run spark_streaming.py either with spark-submit command  if jar is not uploaded to spark jars folder or python3 which reads the kafka data stream, run the model and predict the values.
+8. Run spark_streaming.py either with spark-submit command  if jar is not uploaded to spark jars folder or python3 which reads the kafka data stream, run the model and predict the values.
 
 ```python
 spark-submit --jars spark-streaming-kafka-0-8-assembly_2.11-2.4.3.jar spark_streaming.py
