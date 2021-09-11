@@ -3,7 +3,7 @@
 
 ## Usage:
 
-if you are running scripts in local ubuntu then follow steps from section Local 1 to 5 otherwise run the containers using below command(Work is in prrogress. not fully functional)
+if you are running scripts in local ubuntu then follow steps from section Local 1 to 5 otherwise run the containers using below command(Work is in progress. not fully functional)
 ```bash
 docker-compose up
 ```
