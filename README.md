@@ -43,7 +43,8 @@ bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-fac
 python3 stream_test_data_kafka.py
 ```
 
-8. Run spark_streaming.py either with spark-submit command  if jar is not uploaded to spark jars folder or python3 which reads the kafka data stream, run the model and predict the values.
+8. Run spark_streaming.py with either spark-submit command  if jar is not uploaded to spark jars folder or python3 
+which reads the kafka data stream, run the model and predict the values.
 
 ```python
 spark-submit --jars spark-streaming-kafka-0-8-assembly_2.11-2.4.3.jar spark_streaming.py
